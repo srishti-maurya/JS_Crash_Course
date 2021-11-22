@@ -1,23 +1,10 @@
-//class
+// Single Element Selectors
+console.log(document.getElementById("my-form"));
+console.log(document.querySelector(".container"));
+// Multiple Element Selectors
+console.log(document.querySelectorAll(".item"));
+console.log(document.getElementsByTagName("li"));
+console.log(document.getElementsByClassName("item"));
 
-class Person {
-  constructor(firstName, lastName, dob) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.dob = new Date(dob);
-  }
-  getBirthYear() {
-    return this.dob.getFullYear();
-  }
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
-
-//Instantiate object
-const person1 = new Person("John", "Doe", "4-3-1990");
-const person2 = new Person("Mary", "Smith", "3-6-1970");
-
-console.log(person1.getBirthYear());
-console.log(person1.getFullName());
-console.log(person1);
+const items = document.querySelectorAll(".item");
+items.forEach((item) => console.log(item));
