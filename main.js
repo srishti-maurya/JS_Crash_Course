@@ -1,10 +1,9 @@
-// Single Element Selectors
-console.log(document.getElementById("my-form"));
-console.log(document.querySelector(".container"));
-// Multiple Element Selectors
-console.log(document.querySelectorAll(".item"));
-console.log(document.getElementsByTagName("li"));
-console.log(document.getElementsByClassName("item"));
+const ul = document.querySelector(".items");
+// ul.remove();
+// ul.lastElementChild.remove();
+ul.firstElementChild.textContent = "Hello";
+ul.children[1].innerText = "Brad";
+ul.lastElementChild.innerHTML = "<h1>Hello</h1>";
 
-const items = document.querySelectorAll(".item");
-items.forEach((item) => console.log(item));
+const btn = document.querySelector(".btn");
+btn.style.background = "blue";
