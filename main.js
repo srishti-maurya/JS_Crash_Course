@@ -1,50 +1,55 @@
-// variables in js
+// arrays
 
-/*
- var - globally scoped
-let, const - block scoped 
+//using constructor
+const number = new Array("1,2,3,4");
+console.log(number);
 
-let - can be reassigned a value 
-const - cannot be reassigned a value 
- */
+const fruits = ["apples", "oranges", "pears"];
+console.log(fruits);
+//accessing elements in array
+console.log(fruits);
+//added an ele
+fruits[3] = "grapes";
+console.log(fruits);
 
-let age = 30; // here const cannot be used
-console.log(age);
-age = 31;
-console.log(age);
+fruits.push("mangoes"); //adds to the last
+fruits.unshift("strawberries"); //adds to the start
 
-//datatypes in js
+fruits.pop; //deletes the last ele
+console.log(fruits);
 
-/*
-String, Number, Boolean, null, undefined ,Symbol
-*/
+console.log(Array.isArray("hello")); //checks an arr
 
-const name = "John";
-const aged = 31;
-const rating = 4.5;
-const isCool = true;
-const x = null;
-const y = undefined;
-let z; //undefined
+console.log(fruits.indexOf("oranges"));
 
-console.log(typeof name); //shows the datatype of variable
+//objects
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  hobbies: ["music", "movies", "sports"],
+  address: {
+    street: "50 main st",
+    city: "Boston",
+    state: "MA",
+  },
+};
 
-//concatenation
-console.log("my name is " + name + " and i am " + age);
-//template string
-const hello = `my name is ${name} and i am ${age}`;
-console.log(hello);
+console.log(person);
+console.log(person.lastName, person.firstName);
+console.log(person.hobbies[1]);
+console.log(person.address.city);
 
-//string methods
+//destructing
 
-const s = "hello world!";
+const {
+  firstName,
+  lastName,
+  address: { city },
+} = person;
+console.log(city);
 
-console.log(s.length);
-console.log(s.toUpperCase());
-console.log(s.toLowerCase());
-console.log(s.substring(0, 5));
-console.log(s.substring(0, 5).toUpperCase());
-console.log(s.split(""));
+//adding properties
 
-const text = "technology, computers, it, code";
-console.log(text.split(", "));
+person.email = "test@gmail.com";
+console.log(person);
