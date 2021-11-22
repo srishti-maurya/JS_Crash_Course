@@ -17,33 +17,25 @@ const todos = [
     isCompleted: false,
   },
 ];
-console.log(todos);
 
-console.log(todos[1].text);
+//forEach, map, filter
 
-//converting to json
+todos.forEach((element) => {
+  console.log(element.text);
+});
 
-const todoJSON = JSON.stringify(todos);
-console.log(todoJSON);
+// map returns an array
+const todoText = todos.map((element) => {
+  return element.text;
+});
+console.log(todoText);
 
-//for loop
-for (let i = 0; i <= 10; i++) {
-  console.log(`For loop Number ${i}`);
-}
-
-//while loop
-let i = 0;
-while (i < 10) {
-  console.log(`while loop Number ${i}`);
-  i++;
-}
-
-//looping through an array
-
-// for (let j = 0; j <= todos.length; j++) {
-//   console.log(todos[j].text);
-// }
-
-for (let todo of todos) {
-  console.log(todo.text);
-}
+//filter
+const todoCompleted = todos
+  .filter((element) => {
+    return element.isCompleted === true;
+  })
+  .map(function (todo) {
+    return todo.text;
+  });
+console.log(todoCompleted);
