@@ -1,55 +1,49 @@
-// arrays
+// array of objects
 
-//using constructor
-const number = new Array("1,2,3,4");
-console.log(number);
-
-const fruits = ["apples", "oranges", "pears"];
-console.log(fruits);
-//accessing elements in array
-console.log(fruits);
-//added an ele
-fruits[3] = "grapes";
-console.log(fruits);
-
-fruits.push("mangoes"); //adds to the last
-fruits.unshift("strawberries"); //adds to the start
-
-fruits.pop; //deletes the last ele
-console.log(fruits);
-
-console.log(Array.isArray("hello")); //checks an arr
-
-console.log(fruits.indexOf("oranges"));
-
-//objects
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 30,
-  hobbies: ["music", "movies", "sports"],
-  address: {
-    street: "50 main st",
-    city: "Boston",
-    state: "MA",
+const todos = [
+  {
+    id: 1,
+    text: "Take out trash",
+    isCompleted: true,
   },
-};
+  {
+    id: 1,
+    text: "Meeting with boss",
+    isCompleted: true,
+  },
+  {
+    id: 1,
+    text: "Dentist appointment",
+    isCompleted: false,
+  },
+];
+console.log(todos);
 
-console.log(person);
-console.log(person.lastName, person.firstName);
-console.log(person.hobbies[1]);
-console.log(person.address.city);
+console.log(todos[1].text);
 
-//destructing
+//converting to json
 
-const {
-  firstName,
-  lastName,
-  address: { city },
-} = person;
-console.log(city);
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
 
-//adding properties
+//for loop
+for (let i = 0; i <= 10; i++) {
+  console.log(`For loop Number ${i}`);
+}
 
-person.email = "test@gmail.com";
-console.log(person);
+//while loop
+let i = 0;
+while (i < 10) {
+  console.log(`while loop Number ${i}`);
+  i++;
+}
+
+//looping through an array
+
+// for (let j = 0; j <= todos.length; j++) {
+//   console.log(todos[j].text);
+// }
+
+for (let todo of todos) {
+  console.log(todo.text);
+}
