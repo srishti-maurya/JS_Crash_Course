@@ -1,41 +1,36 @@
-// array of objects
+//conditional
 
-const todos = [
-  {
-    id: 1,
-    text: "Take out trash",
-    isCompleted: true,
-  },
-  {
-    id: 1,
-    text: "Meeting with boss",
-    isCompleted: true,
-  },
-  {
-    id: 1,
-    text: "Dentist appointment",
-    isCompleted: false,
-  },
-];
+const x = 4;
+const y = 10;
 
-//forEach, map, filter
+if (x === 10) {
+  console.log("x is 10");
+} else if (x > 10) {
+  console.log("x is greater than 10");
+} else {
+  console.log("x is less than 10");
+}
 
-todos.forEach((element) => {
-  console.log(element.text);
-});
+if (x > 5 && y > 10) {
+  console.log("x is more than 5 or y is more than 10");
+}
 
-// map returns an array
-const todoText = todos.map((element) => {
-  return element.text;
-});
-console.log(todoText);
+//ternary operator
+const z = 10;
+const color = z > 10 ? "red" : "blue";
+console.log(color);
 
-//filter
-const todoCompleted = todos
-  .filter((element) => {
-    return element.isCompleted === true;
-  })
-  .map(function (todo) {
-    return todo.text;
-  });
-console.log(todoCompleted);
+//switches
+switch (color) {
+  case "red":
+    console.log("color is red");
+    break;
+
+  case "blue":
+    console.log("color is blue");
+    break;
+
+  default:
+    console.log("color is not blue or red");
+    break;
+}
