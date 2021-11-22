@@ -1,36 +1,16 @@
-//conditional
+//functions
 
-const x = 4;
-const y = 10;
-
-if (x === 10) {
-  console.log("x is 10");
-} else if (x > 10) {
-  console.log("x is greater than 10");
-} else {
-  console.log("x is less than 10");
+function addNums(num1, num2) {
+  return num1 + num2;
 }
+console.log(addNums(5, 4));
 
-if (x > 5 && y > 10) {
-  console.log("x is more than 5 or y is more than 10");
+//default params
+function addNums(num1 = 1, num2 = 1) {
+  console.log(num1 + num2);
 }
+addNums();
 
-//ternary operator
-const z = 10;
-const color = z > 10 ? "red" : "blue";
-console.log(color);
-
-//switches
-switch (color) {
-  case "red":
-    console.log("color is red");
-    break;
-
-  case "blue":
-    console.log("color is blue");
-    break;
-
-  default:
-    console.log("color is not blue or red");
-    break;
-}
+//arrow functions
+const addNum = (num1, num2) => num1 + num2;
+console.log(addNum(1, 2));
