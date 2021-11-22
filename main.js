@@ -1,16 +1,23 @@
-//functions
-
-function addNums(num1, num2) {
-  return num1 + num2;
+// constructor function
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
 }
-console.log(addNums(5, 4));
 
-//default params
-function addNums(num1 = 1, num2 = 1) {
-  console.log(num1 + num2);
-}
-addNums();
+//prototype
+Person.prototype.getBirthYear = function () {
+  return this.dob.getFullYear();
+};
 
-//arrow functions
-const addNum = (num1, num2) => num1 + num2;
-console.log(addNum(1, 2));
+Person.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+//Instantiate object
+const person1 = new Person("John", "Doe", "4-3-1990");
+const person2 = new Person("Mary", "Smith", "3-6-1970");
+
+console.log(person1.getBirthYear());
+console.log(person1.getFullName());
+console.log(person1);
